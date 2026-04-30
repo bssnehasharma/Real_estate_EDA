@@ -50,7 +50,7 @@ st.title("🏠 Real Estate EDA Dashboard")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_real_estate_data.csv",index_col=0))
+    df = pd.read_csv("cleaned_real_estate_data.csv")
     
     # Clean data — fix NaN issues
     df['Size_in_SqFt'] = pd.to_numeric(df['Size_in_SqFt'], errors='coerce')
