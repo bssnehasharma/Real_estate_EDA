@@ -4,14 +4,12 @@ import numpy as np
 
 st.title("Real Estate Data Cleaning")
 
-# Clear cache button for debugging
 if st.button("Clear Cache & Reload"):
     st.cache_data.clear()
     st.rerun()
 
 @st.cache_data
 def load_data():
-    # EXACT filename with spaces and dash
     df = pd.read_csv("india_housing_prices.csv")
     return df
 
