@@ -10,7 +10,7 @@ if st.button("Clear Cache & Reload"):
 
 @st.cache_data
 def load_data():
-    df = pd.read_parquet("india_housing_prices.parquet")
+    df = pd.read_csv("india_housing_prices.csv")
     return df
 
 df = load_data()
