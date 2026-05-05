@@ -10,7 +10,7 @@ if st.button("Clear Cache & Reload"):
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("india_housing_prices.csv")
+    df = pd.read_csv('india_housing_prices.csv')
     return df
 
 df = load_data()
@@ -28,7 +28,7 @@ st.write("Missing before cleaning:")
 st.write(df.isnull().sum()[df.isnull().sum() > 0])
 
 # Drop rows where target is missing
-df.dropna(subset=['Price_in_Lakhs'], inplace=True)
+df.dropna(subset=['Price_in_Lakhs', 'Size_in_SqFt', 'City'], inplace=True)
 
 # Fill numeric cols
 df['Size_in_SqFt'] = pd.to_numeric(df['Size_in_SqFt'], errors='coerce')
