@@ -60,7 +60,7 @@ def load_data():
     df['Price_per_SqFt'] = (df['Price_in_Lakhs'] * 100000) / df['Size_in_SqFt']
     df['Age_of_Property'] = 2026 - df['Year_Built']
     city_stats = df.groupby('City')['Price_per_SqFt'].agg(['mean', 'quantile'])
-   df['Good_Investment'] = 0 
+    df['Good_Investment'] = 0 
     return df
 
 df = load_data()
